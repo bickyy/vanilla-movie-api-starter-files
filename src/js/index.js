@@ -1,12 +1,12 @@
 const DOMSelectors = {
   grid: document.querySelector(".movie-grid"),
 };
-const key = "1fd276ec57b4baedacae00246e5cf4b7";
-const call = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&sort_by=average_vote.asc&vote_count.gte=10000&vote_average.gte=8.1&include_adult=false&include_video=false&page=1`;
+const key = `1fd276ec57b4baedacae00246e5cf4b7`;
+const query = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=10000&vote_average.gte=8`;
 
-const query = async function () {
+const init = async function () {
   try {
-    const response = await fetch(call);
+    const response = await fetch(query);
     const data = await response.json();
     data.results.forEach((movie) => {
       DOMSelectors.grid.insertAdjacentHTML(
@@ -32,7 +32,7 @@ const query = async function () {
         </div>
 
         <div class="movie-genres">
-        <div>${movie.genre_ids}</div>
+          <div>${movie.genre_ids}</div>
         </div>
       </div>
     </div>`
@@ -42,4 +42,4 @@ const query = async function () {
     console.log(error);
   }
 };
-query();
+init();

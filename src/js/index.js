@@ -32,7 +32,7 @@ const query = async function () {
         </div>
 
         <div class="movie-genres">
-       
+        <div>${movie.genre_ids}</div>
         </div>
       </div>
     </div>`

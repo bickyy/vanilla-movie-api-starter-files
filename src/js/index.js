@@ -1,3 +1,5 @@
+import { genres } from "./genres";
+ 
 const DOMSelectors = {
   grid: document.querySelector(".movie-grid"),
 };
@@ -32,7 +34,8 @@ const init = async function () {
         </div>
 
         <div class="movie-genres">
-          <div>${movie.genre_ids}</div>
+          <div> ${movie.genre_ids}
+          </div>
         </div>
       </div>
     </div>`

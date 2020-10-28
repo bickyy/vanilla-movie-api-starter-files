@@ -76,3 +76,18 @@ const genres = [
     name: "Western",
   },
 ];
+
+export { genres };
+
+// have genre 2 = the genre_ids
+
+function compare (genres, genre2) {
+  const finalGenre = [];
+  genres.forEach((e1)=> genre2.forEach((e2) => 
+  {if(e1 === e2){
+    finalGenre.push(e1)
+  }
+  }
+  ));
+  retrun finalGenre;
+}
